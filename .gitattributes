@@ -1,0 +1,10 @@
+# Código gerado pelos templates do Flutter; não incluir nas estatísticas.
+android/** linguist-vendored
+ios/** linguist-vendored
+linux/** linguist-vendored
+macos/** linguist-vendored
+windows/** linguist-vendored
+web/** linguist-vendored
+
+# O código da aplicação é Dart.
+lib/**/*.dart linguist-language=Dart
