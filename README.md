@@ -27,7 +27,7 @@ flutter doctor
 ## Como executar
 
 ```bash
-git clone URL_DO_REPOSITORIO
+git clone https://github.com/guilhex/catalogo_produtos.git
 cd flutter_catalogo_produtos
 flutter pub get
 flutter run -d chrome
@@ -63,13 +63,6 @@ lib/
 - O código usa `const` sempre que o widget pode ser criado em tempo de
   compilação.
 
-## Publicação no GitHub
+## Repositório
 
-```bash
-git init
-git add .
-git commit -m "Implementa catálogo de produtos"
-git branch -M main
-git remote add origin URL_DO_REPOSITORIO
-git push -u origin main
-```
+https://github.com/guilhex/catalogo_produtos

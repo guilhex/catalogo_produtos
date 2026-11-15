@@ -15,7 +15,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
   final _formKey = GlobalKey<FormState>();
   final _nomeCtrl = TextEditingController();
   final _precoCtrl = TextEditingController();
-  Categoria _categoria = Categoria.tecnologia;
+  Categoria? _categoria;
 
   @override
   void dispose() {
@@ -29,11 +29,13 @@ class _TelaCadastroState extends State<TelaCadastro> {
 
   void _confirmar() {
     if (!_formKey.currentState!.validate()) return;
+    final categoria = _categoria;
+    if (categoria == null) return;
 
     final produto = Produto(
       nome: _nomeCtrl.text.trim(),
       preco: _lerPreco(_precoCtrl.text)!,
-      categoria: _categoria,
+      categoria: categoria,
     );
 
     Navigator.of(context).pop(produto);
@@ -65,7 +67,9 @@ class _TelaCadastroState extends State<TelaCadastro> {
             const SizedBox(height: 16),
             TextFormField(
               controller: _precoCtrl,
-              keyboardType: const TextInputType.numberWithOptions(decimal: true),
+              keyboardType: const TextInputType.numberWithOptions(
+                decimal: true,
+              ),
               decoration: const InputDecoration(
                 labelText: 'Preço',
                 prefixText: 'R\$ ',
